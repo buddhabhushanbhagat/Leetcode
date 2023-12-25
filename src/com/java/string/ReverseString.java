@@ -24,6 +24,7 @@ public class ReverseString {
 			left++;
 			right--;
 		}
+		
 		String reverse = new String(charArray);
 		return reverse;
 	}

@@ -16,7 +16,7 @@ public class DuplicateChar {
 		
 		System.out.println(a+5);
 		
-		String s = "BhuBshaan";
+		String s = "BhuBshaabbn";
 		printDuplicateChar(s);
 	}
 
