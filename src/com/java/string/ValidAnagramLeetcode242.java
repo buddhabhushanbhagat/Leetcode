@@ -11,7 +11,13 @@ public class ValidAnagramLeetcode242 {
 		String s = "anagram";
 		String t = "magaran";
 		boolean isAnagram = isAnagram(s, t);
-		System.out.println("isAnagram:" + isAnagram);
+		if(isAnagram) {
+			System.out.println("it is Anagram");
+
+		}
+		else {
+			System.err.println("Not a anagram");
+		}
 	}
 
 	private static boolean isAnagram(String s, String t) {
