@@ -22,8 +22,6 @@ public class Palindrome {
 			charArray2[charArray.length-1-i] = charArray[i];
 		}
 		
-		System.out.println("Str1"+ String.copyValueOf(charArray));
-		System.out.println("Str2"+ String.copyValueOf(charArray2));
 		for(int i=0;i<charArray.length-1;i++) {
 			if(charArray[i] != charArray2[i]) {
 				return false;

@@ -1,7 +1,7 @@
 package com.java.string;
 
 public class PermutationsOfString {
-
+	//How do you find all the permutations of a string?
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String s = "bhushan";
