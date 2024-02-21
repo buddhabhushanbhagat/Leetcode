@@ -17,7 +17,7 @@ public class ByExtendingsThreadClass extends Thread{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Thread thread1 = new Thread();
+		ByExtendingsThreadClass thread1 = new ByExtendingsThreadClass();
 		thread1.start();
 		
 		for(int i=0; i<10;i++) {
