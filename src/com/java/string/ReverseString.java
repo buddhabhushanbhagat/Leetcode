@@ -26,7 +26,11 @@ public class ReverseString {
 		}
 		
 		String reverse = new String(charArray);
-		return reverse;
+	//	return reverse;
+	
+	
+	for(left=0;left<=right;left++, right--) {
+		
 	}
-
+	}
 }

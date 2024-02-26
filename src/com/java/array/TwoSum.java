@@ -23,7 +23,7 @@ public class TwoSum {
 		Set<Integer> set = new HashSet<Integer>();
 		int[] result = new int[2];
 		for(int i: arr) {
-			
+			//1,2,4,6,7,9};
 			int diff = target-i;
 			
 			if(set.contains(diff)) {
