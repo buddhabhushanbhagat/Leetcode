@@ -12,7 +12,7 @@ public class SortNumbers {
 		System.out.println("in ascending order:  "+sortedNumbers);
 		List<Integer> descendingNumbers = list.stream().sorted((a,b)->b.compareTo(a)).collect(Collectors.toList());
 		System.out.println("in descending order:  "+descendingNumbers);
-		syso
+		
 		
 		
 		
