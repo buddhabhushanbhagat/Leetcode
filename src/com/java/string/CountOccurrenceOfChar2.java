@@ -12,6 +12,8 @@ public class CountOccurrenceOfChar2 {
 		else {
 			System.err.println("Character "+ch+" not found in string " +s);
 		}
+		
+		 
 	}
 
 	private static int countOccurrenceOfChar(String s, char character) {
