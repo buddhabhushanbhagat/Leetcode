@@ -21,5 +21,12 @@ public class ShallowCopy {
 		c1.setStudent(s3);
 
 		System.out.println(c2.getStudent());
+		
+		
+		/////////////////Shallow copy/////////////////////
+		System.out.println(c1.getClassNo());
+		c1.setClassNo(12);
+		System.out.println(c2.getClassNo());
+
 	}
 }
