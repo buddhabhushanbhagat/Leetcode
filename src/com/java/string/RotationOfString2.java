@@ -4,7 +4,7 @@ public class RotationOfString2 {
 //How do you check if two strings are a rotation of each other?
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str1 = "avajavaavajava";
+		String str1 = "avajava";
 		String str2 = "javaava";
 
 		boolean isRotation = isRotation(str1, str2);

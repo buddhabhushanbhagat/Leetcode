@@ -23,6 +23,7 @@ public class ValidParenthesesLeetcode20 {
 				}
 				char top = stack.peek();
 				if(ch == ']' && top == '[')
+					// 
 					stack.pop();
 				else if(ch == '}' && top == '{')
 					stack.pop();
@@ -35,5 +36,5 @@ public class ValidParenthesesLeetcode20 {
 		
 		return stack.isEmpty();
 	}
-
+  
 }

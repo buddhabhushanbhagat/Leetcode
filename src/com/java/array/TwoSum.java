@@ -23,15 +23,15 @@ public class TwoSum {
 		Set<Integer> set = new HashSet<Integer>();
 		int[] result = new int[2];
 		for(int i: arr) {
-			//1,2,4,6,7,9};
-			int diff = target-i;
+			//1,2,4,6,7,9}; 5
+			int diff = target-i; 
 			
-			if(set.contains(diff)) {
+			if(set.contains(i)) {
 				result[0] = i;
 				result[1] = diff;
 				return result;
 			}else {
-				set.add(i);
+				set.add(diff);
 			}
 			
 			
