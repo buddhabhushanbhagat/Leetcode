@@ -52,7 +52,6 @@ final class Student {
 
 			// Creating Map with HashMap reference
 			Map<String, String> tempMap = new HashMap<>();
-			this.metadata.forEach((k,v)->{System.out.println("heheee");});
 			for (Map.Entry<String, String> entry :
 				this.metadata.entrySet()) {
 				tempMap.put(entry.getKey(), entry.getValue());

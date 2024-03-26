@@ -11,7 +11,7 @@ public class Swap0And1 {
 		int[] result2 = segregateZeroAndOneWay2(arr);
 		
 		System.out.println(Arrays.toString(result));
-		System.out.println("Way 2result: "+Arrays.toString(result));
+		System.out.println("Way 2result: "+Arrays.toString(result2));
 	}
 
 	private static int[] segregateZeroAndOneWay2(int[] arr) {
