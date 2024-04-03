@@ -4,7 +4,7 @@ public class BinarySearchInRotatedArrayLeetcode33 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums = {4,5,6,7,0,1,2};
+		int[] nums = {4,5,6,7};
 		int target = 9;
 		int searchIndex = search(nums,target);
 		System.out.println(searchIndex);
@@ -16,12 +16,13 @@ public class BinarySearchInRotatedArrayLeetcode33 {
 		// 4,5,6,7,0,1,2
 		//find pivot index, such that we can divide sorted array in two
 		int pivot = findPivot(nums,target);
-		
-		if(nums[pivot] == target) 
-			return pivot;
+		System.out.println("pivot:"+pivot);
 		if(pivot == -1) {
 			return searchLeft(nums, target,0,nums.length-1);
 		}
+		if(nums[pivot] == target) 
+			return pivot;
+		
 		if(nums[0] <= target) 
 			 return searchLeft(nums,target,0,pivot);
 		else
@@ -58,7 +59,7 @@ public class BinarySearchInRotatedArrayLeetcode33 {
 				return mid;
 			if(mid> left && nums[mid] < nums[mid-1])
 				return mid-1;
-			if(nums[left] > nums[mid])
+			if(nums[left] >= nums[mid])
 				right = mid-1;
 			else
 				left = mid+1;	

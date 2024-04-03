@@ -1,4 +1,4 @@
-package com.java.design.pattern.singleton;
+ package com.java.design.pattern.singleton;
 
 public class Student {
 	
