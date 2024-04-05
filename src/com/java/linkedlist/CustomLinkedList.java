@@ -5,11 +5,11 @@ public class CustomLinkedList {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		LinkedList node1 = new LinkedList(1);
-		LinkedList node2 = new LinkedList(2);
-		LinkedList node3 = new LinkedList(3);
-		LinkedList node4 = new LinkedList(4);
-		LinkedList node5 = new LinkedList(5);
+		Node node1 = new Node(1);
+		Node node2 = new Node(2);
+		Node node3 = new Node(3);
+		Node node4 = new Node(4);
+		Node node5 = new Node(5);
 	}
 
 }
