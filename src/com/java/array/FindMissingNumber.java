@@ -7,11 +7,39 @@ public class FindMissingNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr = {0,1,2,3,4,5,6,7,9};
+		int[] arr = {0,1,2,3,4,6,7,8};
 		
 		int missingNumber = findMissingNumber(arr);
+		int missingNumber2 = findMissingNumber2(arr);
+		int missingNumber3 = findMissingNumber3(arr);
 		System.out.println("Missing number is:" +missingNumber);
+		System.out.println("Missing number is:" +missingNumber2);
 		
+	}
+
+	private static int findMissingNumber3(int[] arr) {
+		// TODO Auto-generated method stub
+		int sumOfN = ((arr.length)*(arr.length+1))/2;
+		int sumOfArr = 0;
+		for(int i:arr) {
+			sumOfArr+=i;
+		}
+		return sumOfN-sumOfArr;
+	}
+
+	//Way 2
+	private static int findMissingNumber2(int[] arr) {
+		// TODO Auto-generated method stub
+		if(arr[0] !=0)
+			return 0;
+		if(arr[arr.length-1] != arr.length)
+			return arr.length;
+		int pre = 0;
+		for(int curr = 1;curr<arr.length;curr++,pre++) {
+			if(arr[curr] - arr[pre] !=1)
+				return arr[curr]-1;
+		}
+		return -1;
 	}
 
 	private static int findMissingNumber(int[] arr) {

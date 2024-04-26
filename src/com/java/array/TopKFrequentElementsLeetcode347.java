@@ -15,7 +15,7 @@ public class TopKFrequentElementsLeetcode347 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] nums = {1,1,1,2,2,3};
-		int k = 2;
+		int k = 3;
 		int[] topKFrequent = topKFrequent(nums,k);
 		
 		for(Object i:topKFrequent) {
