@@ -4,10 +4,18 @@ public class ByImplementingRunnableInterface implements Runnable{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Runnable r = new ByImplementingRunnableInterface();
-		Thread t1 = new Thread(r);
-		t1.start();
 		
+		Integer a= 10;
+		Integer b= 10;
+		System.out.println(a==b);
+		
+		
+		ByImplementingRunnableInterface r = new ByImplementingRunnableInterface();
+		Thread t1 = new Thread(r);
+
+		t1.start();
+	
+		System.out.println("is de"+t1.isDaemon());
 		for(int i=0; i< 10; i++) {
 			try {
 				Thread.sleep(200);
@@ -30,6 +38,7 @@ public class ByImplementingRunnableInterface implements Runnable{
 				e.printStackTrace();
 			}
 			System.out.println("child thread");
+			
 		}
 	}
 

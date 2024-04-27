@@ -16,7 +16,7 @@ public class FindMissingNumber {
 		System.out.println("Missing number is:" +missingNumber2);
 		
 	}
-
+	//Way 3
 	private static int findMissingNumber3(int[] arr) {
 		// TODO Auto-generated method stub
 		int sumOfN = ((arr.length)*(arr.length+1))/2;
