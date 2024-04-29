@@ -11,6 +11,7 @@ public class CountPrimesleetcode204 {
 
 	private static int countPrimes(int n) {
 		// TODO Auto-generated method stub
+		boolean[] arr = new boolean[]
 		return 0;
 	}
 
