@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -85,6 +86,89 @@ public class MostAskedInterviewQuestions {
 		System.out.println(Arrays.toString(merged));
 		System.out.println(Arrays.toString(merged1));
 
+//		11) How do you get three maximum numbers and three minimum numbers from the given list of integers?
+		List<Integer> listOfIntegers3 = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89);
+		List<Integer> firstThreeMax = listOfIntegers3.stream().sorted(Comparator.reverseOrder()).distinct().limit(3)
+				.collect(Collectors.toList());
+		List<Integer> firstThreeMin = listOfIntegers3.stream().sorted().distinct().limit(3).toList();
+		System.out.println("firstThreeMax:" + firstThreeMax);
+		System.out.println("firstThreeMin:" + firstThreeMin);
+
+//		12) Java 8 program to check if two strings are anagrams or not?
+		String s1 = "RaceCar";
+		String s2 = "CarRace";
+		s1 = Stream.of(s1.split("")).map(e -> e.toLowerCase()).sorted().collect(Collectors.joining());
+		s2 = Stream.of(s2.split("")).map(e -> e.toLowerCase()).sorted().collect(Collectors.joining());
+		if (s1.equals(s2)) {
+			System.out.println("Anagram:" + true);
+		} else
+			System.out.println("Anagram:" + false);
+
+//		13) Find sum of all digits of a number in Java 8?
+		int i = 15623;
+		int sum1 = Stream.of(String.valueOf(i).split("")).map(e -> Integer.parseInt(e)).mapToInt(e -> e).sum();
+		int sum2 = Stream.of(String.valueOf(i).split("")).collect(Collectors.summingInt(e -> Integer.parseInt(e)));
+		System.out.println(sum1);
+		System.out.println(sum2);
+
+//		14) Find second largest number in an integer array?
+		List<Integer> listOfIntegers4 = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89);
+		int secondLargest = listOfIntegers4.stream().sorted(Comparator.reverseOrder()).distinct().skip(1).findFirst()
+				.get();
+		System.out.println("second largest:" + secondLargest);
+
+//		**15) Given a list of strings, sort them according to increasing order of their length?
+		List<String> listOfStrings2 = Arrays.asList("Java", "Python", "C#", "HTML", "Kotlin", "C++", "COBOL", "C");
+		List<String> sortedWithLength = listOfStrings2.stream().sorted(Comparator.comparing(String::length)).toList();
+//        List<String> sortedWithLength = listOfStrings2.stream().sorted((a,b)->a.length()-b.length()).collect(Collectors.toList());
+		System.out.println(sortedWithLength);
+
+//		**16) Given an integer array, find sum and average of all elements?
+		int[] a2 = new int[] { 45, 12, 56, 15, 24, 75, 31, 89 };
+		int sum = Arrays.stream(a2).sum();
+		int summ = IntStream.of(a2).sum();
+		double avg = Arrays.stream(a2).average().getAsDouble();
+		double avgg = IntStream.of(a2).average().getAsDouble();
+		System.out.println("Sum with two ways:" + sum + "," + summ);
+		System.out.println("Avg with two ways:" + avg + "," + avgg);
+
+//		17) How do you find common elements between two arrays?
+		List<Integer> list1 = Arrays.asList(71, 21, 34, 89, 56, 28);
+		List<Integer> list2 = Arrays.asList(12, 56, 17, 21, 94, 34);
+		List<Integer> common = list1.stream().filter(e -> list2.contains(e)).collect(Collectors.toList());
+		System.out.println(common);
+
+//		**18) Reverse each word of a string using Java 8 streams?
+		String str = "Java Concept Of The Day";
+		String revString = Arrays.stream(str.split(" ")).map(c -> new StringBuilder(c).reverse())
+				.collect(Collectors.joining(" "));
+		System.out.println(revString);
+
+//       19) How do you find sum of first 10 natural numbers?
+		int sumOf10Num = IntStream.rangeClosed(1, 10).sum();
+		System.out.println(sumOf10Num);
+
+//       20) Reverse an integer array
+		int[] array = new int[] { 5, 1, 7, 3, 9, 6 };
+		int[] revArray = IntStream.range(0, array.length).map(e -> array[array.length - 1 - e]).toArray();
+		System.out.println(Arrays.toString(revArray));
+
+//       21) Print 1 to 10 even numbers
+		int[] oneTo10EvenNum = IntStream.range(1, 11).filter(e -> e % 2 == 0).toArray();
+		System.out.println(Arrays.toString(oneTo10EvenNum));
+
+//       21) Print first 10 even numbers
+		int[] first10EvenNum = IntStream.range(1, 11).map(e -> e * 2).toArray();
+		System.out.println(Arrays.toString(first10EvenNum));
+
+//       22) How do you find the most repeated element in an array?
+		List<String> listOfStrings3 = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Pen", "Note Book",
+				"Pencil");
+		Map<String, Long> mostRepeatedWordMap = listOfStrings3.stream()
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		System.out.println(mostRepeatedWordMap);
+		Entry<String, Long> eS = mostRepeatedWordMap.entrySet().stream().max(Map.Entry.comparingByValue()).get();
+		System.out.println(eS.getKey() + ":" + eS.getValue());
 	}
 
 }
