@@ -3,9 +3,11 @@ package com.java8;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -169,6 +171,45 @@ public class MostAskedInterviewQuestions {
 		System.out.println(mostRepeatedWordMap);
 		Entry<String, Long> eS = mostRepeatedWordMap.entrySet().stream().max(Map.Entry.comparingByValue()).get();
 		System.out.println(eS.getKey() + ":" + eS.getValue());
+
+//		23) Palindrome program using Java 8 streams
+		String str1 = "ROTATOR";
+		boolean isPalindrome = IntStream.range(0, str1.length() / 2)
+				.noneMatch(j -> str1.charAt(j) != str1.charAt(str1.length() - 1 - j));
+		System.out.println("Palindrome:" + isPalindrome);
+
+//		24) Given a list of strings, find out those strings which start with a number?
+		List<String> listOfStrings4 = Arrays.asList("One", "2wo", "3hree", "Four", "5ive", "Six");
+		List<String> startsWithZero = listOfStrings4.stream().filter(s -> s.charAt(0) > 47 && s.charAt(0) < 58)
+				.toList();
+		listOfStrings4.stream().filter(s -> Character.isDigit(s.charAt(0))).forEach(System.out::println);
+		System.out.println(startsWithZero);
+
+//      25) How do you extract duplicate elements from an array?
+		List<Integer> listOfIntegers5 = Arrays.asList(111, 222, 333, 111, 555, 333, 777, 222);
+		Map<Integer, Long> elementsCount = listOfIntegers5.stream()
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		List<Integer> duplicateElements = elementsCount.keySet().stream().filter(e -> elementsCount.get(e) > 1)
+				.toList();
+
+		Set<Integer> uniqueElementSet = new HashSet<>();
+		Set<Integer> duplicateElementSet = listOfIntegers5.stream().filter(e1 -> !uniqueElementSet.add(e1))
+				.collect(Collectors.toSet());
+
+		System.out.println(duplicateElements);
+		System.out.println(duplicateElementSet);
+
+//		26) Print duplicate characters in a string?
+		String inputString1 = "Java Concept Of The Day";
+		Map<Character, Long> charCountMap = inputString1.toLowerCase().chars().mapToObj(c -> (char) c)
+				.collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+		System.out.println(charCountMap);
+		charCountMap.keySet().stream().filter(e -> charCountMap.get(e) > 1).forEach(System.out::println);
+
+//		27) Find first repeated character in a string?
+
+		String inputString2 = "Java Concept Of The Day";
+
 	}
 
 }
