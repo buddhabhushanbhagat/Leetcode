@@ -209,6 +209,13 @@ public class MostAskedInterviewQuestions {
 //		27) Find first repeated character in a string?
 
 		String inputString2 = "Java Concept Of The Day";
+		Map<Character, Long> countCharMap = Arrays.s().chars().mapToObj(c -> (char) c)
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		Map<Character, Long> countCharMap = inputString2.toLowerCase().chars().mapToObj(c -> (char) c)
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		System.out.println(countCharMap);
+		String firstRepeatedChar = countCharMap.entrySet().stream().filter(entry -> entry.getValue() > 1)
+				.map(entry -> entry.getKey()).findFirst().get();
 
 	}
 
