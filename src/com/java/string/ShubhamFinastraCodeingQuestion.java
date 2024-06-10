@@ -1,7 +1,10 @@
 package com.java.string;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class ShubhamFinastraCodeingQuestion {
 
@@ -14,21 +17,25 @@ public class ShubhamFinastraCodeingQuestion {
 
 	private static List<Character> uniqueCharsFromString(String s) {
 		// TODO Auto-generated method stub
-		List<Character> list = new ArrayList<>();
-		int[] arr = new int[26];
-		s = s.toLowerCase();
+		List<Character> result = new ArrayList<>();
+		Map<Character, Integer> map = new HashMap<>();
 		for (char ch : s.toCharArray()) {
-			int index = ch - 97;
-			arr[index]++;
+			if (map.containsKey(ch)) {
+				map.put(ch, map.get(ch) + 1);
+			} else {
+				map.put(ch, 1);
+
+			}
 		}
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] == 1) {
-				char ch = (char) (i + 97);
-				list.add(ch);
+		Set<Character> charSet = map.keySet();
+
+		for (char ch : charSet) {
+			if (map.get(ch) == 1) {
+				result.add(ch);
 			}
 		}
 
-		return list;
+		return result;
 	}
 
 }

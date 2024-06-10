@@ -10,6 +10,19 @@ public class ReverseString2 {
 		String s = "Bhushan";
 		String reverse = reverse(s);
 		System.out.println("reverse is :"+reverse);
+		String reverseRecursion = reverseRecursion(s.toCharArray(),0,s.length()-1);
+		System.out.println("reverse with recursion is :"+reverseRecursion);
+	}
+
+	private static String reverseRecursion(char[] charArray, int i, int j) {
+		// TODO Auto-generated method stub
+		if(i<j) {
+			char ch = charArray[i];
+			charArray[i] = charArray[j];
+			charArray[j] = ch;
+			reverseRecursion(charArray, i+1, j-1);
+		}
+		return String.copyValueOf(charArray);
 	}
 
 	private static String reverse(String s) {

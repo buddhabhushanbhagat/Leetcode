@@ -1,14 +1,15 @@
+
 package com.java.string;
 
 import java.util.Arrays;
 
-public class RemoveDuplicateCharacterFromString2 {
+public class RemoveDuplicateCharacterFromString3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String s = "bbhushan";
 		int oldSize = s.length();
-		s= removeDuplicateCharacters(s);
+		s= removeDuplicateCharacters1(s);
 		int newSize = s.length();
  		System.out.println(s);
 //		if(oldSize == newSize) {
@@ -19,6 +20,25 @@ public class RemoveDuplicateCharacterFromString2 {
 //		}
  		
 
+	}
+	
+	private static String removeDuplicateCharacters1(String s) {
+		// TODO Auto-generated method stub
+		char[] charArray = new char[s.length()];
+		char[] charArrayS = s.toCharArray();
+		Arrays.sort(charArrayS);
+		
+		charArray[0] = charArrayS[0];
+		int preIndex = 0;
+		for(int i=1,k=1;i<s.length();i++) {
+			if(charArrayS[i] != charArrayS[preIndex]) {
+				charArray[k] = charArrayS[i];
+				k++;
+			}
+			
+			preIndex = i;
+		}
+		return String.copyValueOf(charArray);
 	}
 
 	private static String removeDuplicateCharacters(String s) {

@@ -12,16 +12,18 @@ public class ToLowerCaseLeetcode709 {
 
 	private static String toLowerCase(String s) {
 		// TODO Auto-generated method stub
-//		65 - 90
-//		97 - 122
-		char[] charArray = s.toCharArray();
-		for (int i = 0; i < charArray.length; i++) {
-			if (charArray[i] > 64 && charArray[i] < 91) {
-				charArray[i] = (char) (charArray[i] + 32);
-				System.out.println(charArray[i]);
+		char[] ch = s.toCharArray();
+		for(int i=0;i<s.length();i++) {
+			if(s.charAt(i) < 91 && s.charAt(i) > 64) {
+				char ch1 = (char) (s.charAt(i) + 32);
+				ch[i] = ch1;
 			}
 		}
-		return String.copyValueOf(charArray);
+		
+		
+		return String.copyValueOf(ch);
 	}
+
+	
 
 }
