@@ -1,5 +1,6 @@
 package com.java.string;
 
+Not able to solve
 public class PermutationsOfString {
 	//How do you find all the permutations of a string?
 	public static void main(String[] args) {

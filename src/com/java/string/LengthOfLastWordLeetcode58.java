@@ -11,11 +11,10 @@ public class LengthOfLastWordLeetcode58 {
 
 	private static int lengthOfLastWord(String s) {
 		// TODO Auto-generated method stub
-		s = s.trim();
-		String[] stringArray = s.split(" ");
-		int lastIndex = stringArray.length-1;
-		System.out.println(stringArray[lastIndex]);
-		return stringArray[lastIndex].length();
+		String[] str = s.split(" ");
+		return str[str.length-1].length();
 	}
+
+	
 
 }

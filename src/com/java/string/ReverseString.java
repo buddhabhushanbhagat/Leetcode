@@ -25,12 +25,6 @@ public class ReverseString {
 			right--;
 		}
 		
-		String reverse = new String(charArray);
-	//	return reverse;
-	
-	
-	for(left=0;left<=right;left++, right--) {
-		
-	}
+		return String.copyValueOf(charArray);
 	}
 }
