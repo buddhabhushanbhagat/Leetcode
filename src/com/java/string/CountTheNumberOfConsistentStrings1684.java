@@ -11,6 +11,19 @@ public class CountTheNumberOfConsistentStrings1684 {
 		
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	private static int countConsistentStrings(String allowed, String[] words) {
 		// TODO Auto-generated method stub
 		int count =0;

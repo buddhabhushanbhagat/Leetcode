@@ -1,4 +1,4 @@
-package com.java.string;
+ package com.java.string;
 
 public class RotationOfString {
 //How do you check if two strings are a rotation of each other?
